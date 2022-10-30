@@ -1,0 +1,62 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Richest And Poorest Countries",
+   
+    "width": 600,
+    "height": 500,
+    
+    
+    "data": {"url": "top5.csv"},
+    "params": [
+      {
+        "name": "Year",
+        "value": 2006,
+        "bind": {
+          "input": "range",
+          "min": 2000,
+          "max": 2018,
+          "step": 1,
+          "name": "Year:  "
+        }
+      }
+    ],
+    "transform": [
+      {"filter": "datum.Year == Year"}
+    ],
+    "mark":{"type": "bar", "tooltip": true},
+    "encoding": {
+      "x": {
+        "field": "Entity",
+        "type": "nominal",
+        "sort": "ascending",
+        "title": "Year"
+      },
+      "y": {
+          "field": "GDP per capita",
+        "type": "quantitative",
+        "title": "GDP per capita"
+      },
+      "color": {
+        "field": "Entity",
+        "type": "nominal",
+        "scale": {
+          "range": [
+            "#408064",
+            "#F4B886",
+            "#76E5FC",
+            "#A18276",
+            "#F15618",
+            "#F6AB13",
+            "#42E642",
+            "#F36D00",
+            "#CE6A85",
+            "#361134",
+            "#4BC0D9"
+          ]
+       
+
+        }
+        }
+    },
+    "config": {}
+  }

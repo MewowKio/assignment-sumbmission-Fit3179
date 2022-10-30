@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("./bkg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.header-box {
+  width: 65rem;
+  color: white;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem 1rem;
+  margin: 1rem 1rem;
+  border-radius: 1rem;
+  opacity: 0.9;
+  background-color: rgb(203, 188, 150);
+}
+
+.header {
+  font-family: sans-serif;
+  font-weight: 400;
+}
+
+.description {
+  font-size: 1.3rem;
+  font-weight: 300;
+  font-family: sans-serif;
+  padding: 1rem;
+}
+
+.content-box {
+  background-color: white;
+  width: 100rem;
+  position: relative;
+  border-radius: 1rem;
+  opacity: 0.95;
+}
+
+.content-item {
+  height: 40rem;
+  margin: 1rem 1rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 1rem;
+  display: flex;
+}
+
+.footer {
+  color: white;
+  height: 2rem;
+  margin-top: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: antiquewhite;
+}
+
+.graph {
+  background-color: rgb(200, 207, 164);
+  width: 50%;
+  border-radius: 1rem 0 0 1rem;
+  overflow: scroll;
+  
+}
+
+.disc {
+  background-color: rgb(203, 188, 150);
+  width: 50%;
+  border-radius: 0 1rem 1rem 0;
+  color: white;
+}

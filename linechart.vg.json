@@ -1,0 +1,65 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "GDP Mean Growth",
+    "data": {"url": "years.csv"},
+    "width": 600,
+    "height":550,
+    "params": [
+        {
+        "name": "Country_selection","bind": {
+            "input": "select",
+            "options": [
+            null,
+            "Chad",
+            "Ethiopia",
+            "India",
+            "Madagascar",
+            "Namibia",
+            "Sudan",
+            "United Kingdom",
+            "United States",
+            "Germany",
+            "Japan"
+            ],
+            "labels":[
+            "Show All",
+            "Chad",
+            "Ethiopia",
+            "India",
+            "Madagascar",
+            "Namibia",
+            "Sudan",
+            "United Kingdom",
+            "United States",
+            "Germany",
+            "Japan"
+            ],
+            "name": "Country selection: "
+            }
+            }
+            ],
+         
+    "mark": {
+        "type": "line",
+        "point": true
+      },
+
+      "transform": [
+        {"filter": "Country_selection == null || datum.Entity == Country_selection"} 
+        ],
+
+    "encoding": {
+      "x": {"timeUnit": "year", "field": "Year"},
+      "y": {"aggregate":"mean", "field": "GDP per capita","type": "quantitative"},
+      "color": {"field": "Entity", "type": "nominal"},
+
+    "tooltip": [
+    {"field": "GDP per capita", "type": "quantitative", "title":
+    "Mean GDP"}
+    ]
+    
+      
+    }
+}
+    
+    

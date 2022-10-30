@@ -1,0 +1,52 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Reletionship between waste and malnutrition",
+    "width": 645,
+    "height":550,
+    "params": [
+      {
+      "name": "Continents","bind": {
+          "input": "select",
+          "options": [
+          null,
+          "Africa",
+          "Americas",
+          "Asia",
+          "Europe",
+          "Oceania"
+          ],
+          "labels":[
+          "Show All",
+          "Africa",
+          "Americas",
+          "Asia",
+          "Europe",
+          "Oceania"
+          ],
+          "name": "Country selection: "
+          }
+          }
+          ],
+          "transform": [
+            {"filter": "Continents == null || datum.region == Continents"} 
+          ],
+    "data": {
+      "url": "malntcnt.csv"
+    },
+    "mark": "point",
+    "encoding": {
+      "x": {
+        "field": "Underweight",
+        "type": "quantitative",
+        "scale": {"zero": false},
+        "title":"Malnutrition"
+      },
+      "y": {
+        "field": "Wasting",
+        "type": "quantitative",
+        "scale": {"zero": false},
+        "title":"Food Waste"
+      },
+      "color": {"field": "region", "type": "nominal"}
+    }
+  }
